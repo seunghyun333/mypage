@@ -1,0 +1,23 @@
+
+- 터미널 준비하기 - 
+mkdir deploy              **_deploy 폴더 만들기
+cp app.py deploy/application.py              **deploy 밑에 application.py 파일 만들어라
+cp -r templates deploy/templates                  ** (기존에 있던) templates 통채로 복사해라
+pip freeze > deploy/requirements.txt            **
+cd deploy                                            **deploy로 들어가자 거기서 명령어치는거임 / 지정폴더로 이동하기
+
+- application.py 세팅하기 - 
+application = app = Flask(__name__)
+app.run()
+
+- 패키지 설치하기 - 
+pip install awsebcli
+
+- 보안 자격증명 - 
+eb init
+
+- 초기 설정 - 
+eb create myweb
+
+- 코드 수정 & 업데이트 - 
+eb deploy myweb
